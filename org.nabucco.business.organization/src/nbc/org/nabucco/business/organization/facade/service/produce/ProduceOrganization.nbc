@@ -1,0 +1,124 @@
+/*
+* Copyright 2010 PRODYNA AG
+*
+* Licensed under the Eclipse Public License (EPL), Version 1.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.opensource.org/licenses/eclipse-1.0.php or
+* http://www.nabucco-source.org/nabucco-license.html
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+package org.nabucco.business.organization.facade.service.produce;
+
+import org.nabucco.business.organization.facade.message.BusinessVolumeListMsg;
+import org.nabucco.business.organization.facade.message.CorporationListMsg;
+import org.nabucco.business.organization.facade.message.CreditReportListMsg;
+import org.nabucco.business.organization.facade.message.CustomerListMsg;
+import org.nabucco.business.organization.facade.message.DepartmentListMsg;
+import org.nabucco.business.organization.facade.message.EUCorporationListMsg;
+import org.nabucco.business.organization.facade.message.OrganizationMasterListMsg;
+import org.nabucco.business.organization.facade.message.OrganizationRelationListMsg;
+import org.nabucco.business.organization.facade.message.OrganizationStatisticListMsg;
+import org.nabucco.business.organization.facade.message.SectorListMsg;
+import org.nabucco.business.organization.facade.message.SubsidiaryListMsg;
+import org.nabucco.business.organization.facade.message.VendorListMsg;
+import org.nabucco.business.organization.facade.message.WorkingTimeListMsg;
+import org.nabucco.business.organization.facade.message.produce.BusinessVolumeProduceRq;
+import org.nabucco.business.organization.facade.message.produce.CorporationProduceRq;
+import org.nabucco.business.organization.facade.message.produce.CreditReportProduceRq;
+import org.nabucco.business.organization.facade.message.produce.CustomerProduceRq;
+import org.nabucco.business.organization.facade.message.produce.DepartmentProduceRq;
+import org.nabucco.business.organization.facade.message.produce.EUCorporationProduceRq;
+import org.nabucco.business.organization.facade.message.produce.OrganizationMasterProduceRq;
+import org.nabucco.business.organization.facade.message.produce.OrganizationRelationProduceRq;
+import org.nabucco.business.organization.facade.message.produce.OrganizationStatisticProduceRq;
+import org.nabucco.business.organization.facade.message.produce.SectorProduceRq;
+import org.nabucco.business.organization.facade.message.produce.SubsidiaryProduceRq;
+import org.nabucco.business.organization.facade.message.produce.VendorProduceRq;
+import org.nabucco.business.organization.facade.message.produce.WorkingTimeProduceRq;
+import org.nabucco.framework.base.facade.exception.service.ProduceException;
+
+@Author			Dominic Trumpfheller
+@Company		PRODYNA AG
+@Date			2010-11-30
+@Version		1.0
+@Description	Produce Service for Organization
+public Service ProduceOrganization {
+
+    @ManualImplementation
+	@JoinPoint 		org.nabucco.aspect.initializing
+	public OrganizationMasterListMsg produceOrganizationMaster(OrganizationMasterProduceRq msg)
+		throws ProduceException;
+
+    @ManualImplementation
+	@JoinPoint 		org.nabucco.aspect.initializing
+	public OrganizationRelationListMsg produceOrganizationRelation(OrganizationRelationProduceRq msg)
+		throws ProduceException;
+
+    @ManualImplementation
+	@JoinPoint 		org.nabucco.aspect.initializing
+	public DepartmentListMsg produceDepartment(DepartmentProduceRq msg)
+		throws ProduceException;
+		
+    @ManualImplementation
+	@JoinPoint 		org.nabucco.aspect.initializing
+	public SubsidiaryListMsg produceSubsidiary(SubsidiaryProduceRq msg)
+		throws ProduceException;
+		
+    @ManualImplementation
+	@JoinPoint 		org.nabucco.aspect.initializing
+	public CorporationListMsg produceCorporation(CorporationProduceRq msg)
+		throws ProduceException;
+		
+    @ManualImplementation
+	@JoinPoint 		org.nabucco.aspect.initializing
+	public CustomerListMsg produceCustomer(CustomerProduceRq msg)
+		throws ProduceException;
+		
+    @ManualImplementation
+	@JoinPoint 		org.nabucco.aspect.initializing
+	public CustomerListMsg produceCustomerDepartment(CustomerProduceRq msg)
+		throws ProduceException;
+		
+    @ManualImplementation
+	@JoinPoint 		org.nabucco.aspect.initializing
+	public VendorListMsg produceVendor(VendorProduceRq msg)
+		throws ProduceException;
+	
+	@ManualImplementation
+	@JoinPoint 		org.nabucco.aspect.initializing
+	public WorkingTimeListMsg produceWorkingTime(WorkingTimeProduceRq msg)
+		throws ProduceException;
+	
+	@ManualImplementation
+	@JoinPoint 		org.nabucco.aspect.initializing
+	public CreditReportListMsg produceCreditReport(CreditReportProduceRq msg)
+		throws ProduceException;
+	
+	@ManualImplementation
+	@JoinPoint 		org.nabucco.aspect.initializing
+	public OrganizationStatisticListMsg produceOrganizationStatistic(OrganizationStatisticProduceRq msg)
+		throws ProduceException;
+			
+	@ManualImplementation
+	@JoinPoint 		org.nabucco.aspect.initializing
+	public EUCorporationListMsg produceEUCorporation(EUCorporationProduceRq msg)
+		throws ProduceException;
+		
+	@ManualImplementation
+	@JoinPoint 		org.nabucco.aspect.initializing
+	public BusinessVolumeListMsg produceBusinessVolume(BusinessVolumeProduceRq msg)
+		throws ProduceException;
+		
+	@ManualImplementation
+	@JoinPoint 		org.nabucco.aspect.initializing
+	public SectorListMsg produceSector(SectorProduceRq msg)
+		throws ProduceException;
+	
+}

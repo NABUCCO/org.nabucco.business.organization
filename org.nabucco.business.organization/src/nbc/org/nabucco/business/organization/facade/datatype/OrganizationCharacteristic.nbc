@@ -1,0 +1,51 @@
+/*
+ * Copyright 2010 PRODYNA AG
+ *
+ * Licensed under the Eclipse Public License (EPL), Version 1.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.opensource.org/licenses/eclipse-1.0.php or
+ * http://www.nabucco-source.org/nabucco-license.html
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.nabucco.business.organization.facade.datatype;
+
+import org.nabucco.framework.base.facade.datatype.NabuccoDatatype;
+
+import org.nabucco.business.organization.facade.datatype.OrganizationCharacteristicType;
+import org.nabucco.business.organization.facade.datatype.OrganizationMaster;
+import org.nabucco.business.organization.facade.datatype.OrganizationRelation;
+import org.nabucco.business.organization.facade.datatype.Sector;
+import org.nabucco.business.organization.facade.datatype.WorkingTime;
+
+@Author			Dominic Trumpfheller
+@Company		PRODYNA AG
+@Date			2010-11-23
+@Version		1.0
+public abstract Datatype OrganizationCharacteristic extends NabuccoDatatype {
+
+	protected Enumeration OrganizationCharacteristicType[1] characteristicType;
+	
+	@FetchStrategy EAGER
+	@AssociationStrategy AGGREGATION
+	private Datatype OrganizationMaster[1] master;
+	
+	@FetchStrategy LAZY
+	@AssociationStrategy COMPOSITION
+	private Datatype Sector[0..*] sectorList;
+	
+	@FetchStrategy LAZY
+	@AssociationStrategy COMPOSITION
+	private Datatype OrganizationRelation[0..*] relationList;
+		
+	@FetchStrategy EAGER
+	@AssociationStrategy COMPOSITION
+	private Datatype WorkingTime[0..1] workingTime;
+	
+}

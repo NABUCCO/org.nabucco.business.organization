@@ -1,0 +1,91 @@
+/*
+* Copyright 2010 PRODYNA AG
+*
+* Licensed under the Eclipse Public License (EPL), Version 1.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.opensource.org/licenses/eclipse-1.0.php or
+* http://www.nabucco-source.org/nabucco-license.html
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+package org.nabucco.business.organization.facade.component;
+
+import org.nabucco.business.organization.facade.datatype.BusinessVolume;
+import org.nabucco.business.organization.facade.datatype.Corporation;
+import org.nabucco.business.organization.facade.datatype.CreditReport;
+import org.nabucco.business.organization.facade.datatype.Customer;
+import org.nabucco.business.organization.facade.datatype.Department;
+import org.nabucco.business.organization.facade.datatype.EUCorporation;
+import org.nabucco.business.organization.facade.datatype.OrganizationCharacteristic;
+import org.nabucco.business.organization.facade.datatype.OrganizationMaster;
+import org.nabucco.business.organization.facade.datatype.OrganizationRelation;
+import org.nabucco.business.organization.facade.datatype.OrganizationStatistic;
+import org.nabucco.business.organization.facade.datatype.Sector;
+import org.nabucco.business.organization.facade.datatype.Subsidiary;
+import org.nabucco.business.organization.facade.datatype.Vendor;
+import org.nabucco.business.organization.facade.datatype.WorkingTime;
+import org.nabucco.business.organization.facade.service.corporationstructure.CorporationStructure;
+import org.nabucco.business.organization.facade.service.maintain.MaintainOrganization;
+import org.nabucco.business.organization.facade.service.produce.ProduceOrganization;
+import org.nabucco.business.organization.facade.service.resolve.ResolveOrganization;
+import org.nabucco.business.organization.facade.service.search.SearchOrganization;
+
+@Author			Dominic Trumpfheller
+@Company		PRODYNA AG
+@Date			2010-11-30
+@Version		1.0
+@Description	Organization component
+public Component OrganizationComponent {
+	
+	private persistent Datatype BusinessVolume[1] businessVolume;
+	
+	private persistent Datatype CreditReport[1] creditReport;
+	
+	private persistent Datatype EUCorporation[1] eUCorporation;
+	
+	private persistent Datatype OrganizationMaster[1] organizationMaster;
+	
+	private persistent Datatype OrganizationRelation[1] organizationRelation;
+	
+	private persistent Datatype OrganizationCharacteristic[1] organizationCharacteristic;
+	
+	private persistent Datatype OrganizationStatistic[1] organizationStatistic;
+	
+	private persistent Datatype Sector[1] sector;
+	
+	private persistent Datatype WorkingTime[1] workingTime;
+	
+	
+	@Referenceable
+	private persistent Datatype Department[1] department;
+	
+	@Referenceable
+	private persistent Datatype Subsidiary[1] subsidiary;
+	
+	@Referenceable
+	private persistent Datatype Corporation[1] corporation;
+	
+	@Referenceable
+	private persistent Datatype Customer[1] customer;
+	
+	@Referenceable
+	private persistent Datatype Vendor[1] vendor;
+	
+	
+	public Service MaintainOrganization;
+	
+	public Service ProduceOrganization;
+	
+	public Service ResolveOrganization;
+	
+	public Service SearchOrganization;
+	
+	public Service CorporationStructure;
+	
+}

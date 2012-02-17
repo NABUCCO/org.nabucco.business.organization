@@ -1,0 +1,52 @@
+/*
+ * Copyright 2010 PRODYNA AG
+ *
+ * Licensed under the Eclipse Public License (EPL), Version 1.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.opensource.org/licenses/eclipse-1.0.php or
+ * http://www.nabucco-source.org/nabucco-license.html
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.nabucco.business.organization.facade.datatype;
+
+import org.nabucco.framework.base.facade.datatype.Amount;
+import org.nabucco.framework.base.facade.datatype.NabuccoDatatype;
+import org.nabucco.framework.base.facade.datatype.date.Time;
+
+@Author			Dominic Trumpfheller
+@Company		PRODYNA AG
+@Date			2011-01-10
+@Version		1.0
+public Datatype WorkingTime extends NabuccoDatatype {
+
+	private Basetype Time[0..1] mondayFrom;
+	private Basetype Time[0..1] mondayTill;
+	
+	private Basetype Time[0..1] tuesdayFrom;
+	private Basetype Time[0..1] tuesdayTill;
+	
+	private Basetype Time[0..1] wednesdayFrom;
+	private Basetype Time[0..1] wednesdayTill;
+	
+	private Basetype Time[0..1] thursdayFrom;
+	private Basetype Time[0..1] thursdayTill;
+	
+	private Basetype Time[0..1] fridayFrom;
+	private Basetype Time[0..1] fridayTill;
+	
+	private Basetype Time[0..1] saturdayFrom;
+	private Basetype Time[0..1] saturdayTill;
+	
+	private Basetype Time[0..1] sundayFrom;
+	private Basetype Time[0..1] sundayTill;
+	
+	private Basetype Amount[0..1] overAll;
+	
+}
